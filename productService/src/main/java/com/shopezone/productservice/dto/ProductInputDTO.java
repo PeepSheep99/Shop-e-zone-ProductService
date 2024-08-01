@@ -1,18 +1,18 @@
-package com.shopezone.productservice.domain;
+package com.shopezone.productservice.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Setter
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Builder
-public class Product {
-    private String id;
+public class ProductInputDTO {
     private String name;
     private String description;
     private double price;
     private String category;
-    private int rating;
     private int quantity;
 }

@@ -29,4 +29,10 @@ public class ProductController {
     public ResponseEntity<ProductOutputDTO> createProduct(@RequestBody ProductInputDTO inputDTO) {
         return ResponseEntity.ok(productService.createProduct(inputDTO));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteProduct(@PathVariable String id) {
+        productService.deleteProductById(id);
+        return ResponseEntity.noContent().build();
+    }
 }

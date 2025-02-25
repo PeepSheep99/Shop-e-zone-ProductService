@@ -1,6 +1,5 @@
 package com.shopezone.productservice.service;
 
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig;
 import com.shopezone.productservice.dto.ProductInputDTO;
 import com.shopezone.productservice.dto.ProductOutputDTO;
 import com.shopezone.productservice.model.Product;
@@ -34,6 +33,11 @@ public class ProductServiceImpl implements ProductService {
         Product product = convertToEntity(productInputDTO);
         productRepository.save(product);
         return convertToOutputDTO(product);
+    }
+
+    @Override
+    public void deleteProductById(String id) {
+        productRepository.deleteById(id);
     }
 
     private Product convertToEntity(ProductInputDTO dto) {
